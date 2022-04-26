@@ -2,6 +2,10 @@ GET http://localhost:8080/persons
 
 ###
 
+GET http://localhost:8080/persons/1
+
+###
+
 POST http://localhost:8080/persons
 Content-Type: application/json
 
