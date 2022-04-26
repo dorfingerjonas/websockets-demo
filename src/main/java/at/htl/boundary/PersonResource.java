@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
-@Path("persons")
+@Path("/persons")
 @Produces(MediaType.APPLICATION_JSON)
 public class PersonResource {
 
@@ -19,6 +19,22 @@ public class PersonResource {
     public Response findAll() {
         return Response
             .ok(repository.listAll())
+            .build();
+    }
+
+    @GET
+    @Path("/{id}")
+    public Response findById(@PathParam("id") long id) {
+        Person person = repository.findById(id);
+
+        if (person == null) {
+            return Response
+                .status(Response.Status.NOT_FOUND)
+                .build();
+        }
+
+        return Response
+            .ok(person)
             .build();
     }
 
