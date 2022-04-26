@@ -21,10 +21,10 @@ export class PersonService {
         return {
           ...p,
           birthdate: new Date(p as any)
-        }
+        };
       });
 
-      this.personSubject.next(persons)
+      this.personSubject.next(persons);
     });
   }
 
@@ -36,13 +36,13 @@ export class PersonService {
     const body = {
       name: person.name,
       email: person.email,
-      birthdate: this.formatDate(person.birthdate)
+      birthdate: PersonService.formatDate(person.birthdate)
     };
 
     this.backend.post<string>('persons', body).then(value => console.log(value));
   }
 
-  private formatDate(date: Date): string {
+  private static formatDate(date: Date): string {
     return `${ date.getFullYear() }-${ ('0' + (date.getMonth() + 1)).slice(-2) }-${ ('0' + (date.getDate())).slice(-2) }`;
   }
 }

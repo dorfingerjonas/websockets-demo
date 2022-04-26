@@ -6,7 +6,7 @@ import { Person } from '../../models/models';
 @Component({
   selector: 'app-person-form',
   templateUrl: './person-form.component.html',
-  styleUrls: ['./person-form.component.scss']
+  styleUrls: [ './person-form.component.scss' ]
 })
 export class PersonFormComponent implements OnInit {
 

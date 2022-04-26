@@ -27,7 +27,7 @@ public class InitBean {
         );
 
         repository.persist(
-            new Person("Lukas", LocalDate.of(2003, Month.OCTOBER, 14), "lukas@gmail.com"));
+            new Person("Lukas", LocalDate.of(2002, Month.OCTOBER, 14), "lukas@gmail.com"));
 
         repository.persist(
             new Person("Rosi", LocalDate.of(2003, Month.MARCH, 14), "rosi@gmail.com")
